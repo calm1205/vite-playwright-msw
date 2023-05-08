@@ -4,7 +4,9 @@ const baseURL = "http://localhost:3000";
 
 export default defineConfig({
   testDir: "./src/__tests__",
+  fullyParallel: true,
   use: {
+    actionTimeout: 0,
     baseURL,
     trace: "on-first-retry",
   },
@@ -16,6 +18,6 @@ export default defineConfig({
   ],
   webServer: {
     command: "npm run dev",
-    url: baseURL,
+    port: 3000,
   },
 });

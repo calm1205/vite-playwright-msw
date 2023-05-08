@@ -1,13 +1,11 @@
 import { expect, test } from "./customTest";
 import { coffeeMock2 } from "../__mocks__/coffee.mock";
 
-const path = "http://localhost:3000/";
-
 test.describe("mockテスト", () => {
-  test.beforeEach(async ({ page }) => await page.goto(path));
+  test.beforeEach(async ({ page }) => await page.goto("/"));
 
   test("URLが正しいこと", async ({ page }) => {
-    expect(page.url()).toBe(path);
+    expect(page.url()).toBe("http://localhost:3000/");
   });
 
   test("既存mockのレスポンスが正しいこと", async ({ page }) => {
